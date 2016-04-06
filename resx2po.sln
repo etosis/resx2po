@@ -3,17 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "common", "common\common.shproj", "{78D89A11-A9B7-4CB5-9E83-FAE5250472EA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "resx2po", "resx2po\resx2po.csproj", "{CFB1E87A-683A-4E4B-8F17-82AF60777AFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "po2resx", "po2resx\po2resx.csproj", "{C28A8B65-8C3B-43A1-ABD2-F901907BF91B}"
-EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		common\common.projitems*{cfb1e87a-683a-4e4b-8f17-82af60777afc}*SharedItemsImports = 4
-		common\common.projitems*{78d89a11-a9b7-4cb5-9e83-fae5250472ea}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -23,10 +15,6 @@ Global
 		{CFB1E87A-683A-4E4B-8F17-82AF60777AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFB1E87A-683A-4E4B-8F17-82AF60777AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFB1E87A-683A-4E4B-8F17-82AF60777AFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C28A8B65-8C3B-43A1-ABD2-F901907BF91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C28A8B65-8C3B-43A1-ABD2-F901907BF91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C28A8B65-8C3B-43A1-ABD2-F901907BF91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C28A8B65-8C3B-43A1-ABD2-F901907BF91B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

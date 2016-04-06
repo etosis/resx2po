@@ -1,0 +1,403 @@
+#: Features\DebugSupport\DebugDialog\buttonGC.Text
+#, csharp-format
+msgctxt "Features\\DebugSupport\\DebugDialog\\buttonGC.Text"
+msgid "Run GC"
+msgstr "Run GC"
+
+#: Features\DebugSupport\DebugDialog\buttonRefresh.Text
+#, csharp-format
+msgctxt "Features\\DebugSupport\\DebugDialog\\buttonRefresh.Text"
+msgid "Refresh"
+msgstr "Refresh"
+
+#: Features\DebugSupport\DebugDialog\buttonClose.Text
+#, csharp-format
+msgctxt "Features\\DebugSupport\\DebugDialog\\buttonClose.Text"
+msgid "Close"
+msgstr "Close"
+
+#: Features\DebugSupport\DebugDialog\$this.Text
+#, csharp-format
+msgctxt "Features\\DebugSupport\\DebugDialog\\$this.Text"
+msgid "Debug"
+msgstr "Debug"
+
+#: Features\DebugSupport\DebugSupportSettings\labelLogLevel.Text
+#, csharp-format
+msgctxt "Features\\DebugSupport\\DebugSupportSettings\\labelLogLevel.Text"
+msgid "Log level:"
+msgstr "Log level:"
+
+#: Features\DebugSupport\DebugSupportSettings\buttonShowLog.Text
+#, csharp-format
+msgctxt "Features\\DebugSupport\\DebugSupportSettings\\buttonShowLog.Text"
+msgid "Open log file location"
+msgstr "Open log file location"
+
+#: Features\FreeBusy\FreeBusySettings\checkGABLookup.Text
+#, csharp-format
+msgctxt "Features\\FreeBusy\\FreeBusySettings\\checkGABLookup.Text"
+msgid "Look up contacts in Global Address Book"
+msgstr "Look up contacts in Global Address Book"
+
+#: Features\FreeBusy\FreeBusySettings\labelUseAccount.Text
+#, csharp-format
+msgctxt "Features\\FreeBusy\\FreeBusySettings\\labelUseAccount.Text"
+msgid "Use account: "
+msgstr "Use account: "
+
+#: Features\GAB\GABSettings\buttonGABResync.Text
+#, csharp-format
+msgctxt "Features\\GAB\\GABSettings\\buttonGABResync.Text"
+msgid "Resynchronise Global Address Books"
+msgstr "Resynchronise Global Address Books"
+
+#: Features\OutOfOffice\OutOfOfficeDialog\chkEnable.Text
+#, csharp-format
+msgctxt "Features\\OutOfOffice\\OutOfOfficeDialog\\chkEnable.Text"
+msgid "Enable out-of-office auto-responding"
+msgstr "Enable out-of-office auto-responding"
+
+#: Features\OutOfOffice\OutOfOfficeDialog\radioNoTime.Text
+#, csharp-format
+msgctxt "Features\\OutOfOffice\\OutOfOfficeDialog\\radioNoTime.Text"
+msgid "until further notice"
+msgstr "until further notice"
+
+#: Features\OutOfOffice\OutOfOfficeDialog\radioTime.Text
+#, csharp-format
+msgctxt "Features\\OutOfOffice\\OutOfOfficeDialog\\radioTime.Text"
+msgid "from"
+msgstr "from"
+
+#: Features\OutOfOffice\OutOfOfficeDialog\timeFrom.CustomFormat
+#, csharp-format
+msgctxt "Features\\OutOfOffice\\OutOfOfficeDialog\\timeFrom.CustomFormat"
+msgid ""
+msgstr ""
+
+#: Features\OutOfOffice\OutOfOfficeDialog\labelTill.Text
+#, csharp-format
+msgctxt "Features\\OutOfOffice\\OutOfOfficeDialog\\labelTill.Text"
+msgid "until"
+msgstr "until"
+
+#: Features\OutOfOffice\OutOfOfficeDialog\timeTill.CustomFormat
+#, csharp-format
+msgctxt "Features\\OutOfOffice\\OutOfOfficeDialog\\timeTill.CustomFormat"
+msgid ""
+msgstr ""
+
+#: Features\OutOfOffice\OutOfOfficeDialog\labelBody.Text
+#, csharp-format
+msgctxt "Features\\OutOfOffice\\OutOfOfficeDialog\\labelBody.Text"
+msgid "AutoReply only once to each sender with the following text:"
+msgstr "AutoReply only once to each sender with the following text:"
+
+#: Features\OutOfOffice\OutOfOfficeDialog\btnCancel.Text
+#, csharp-format
+msgctxt "Features\\OutOfOffice\\OutOfOfficeDialog\\btnCancel.Text"
+msgid "Cancel"
+msgstr "Cancel"
+
+#: Features\OutOfOffice\OutOfOfficeDialog\btnSave.Text
+#, csharp-format
+msgctxt "Features\\OutOfOffice\\OutOfOfficeDialog\\btnSave.Text"
+msgid "Save"
+msgstr "Save"
+
+#: Features\OutOfOffice\OutOfOfficeDialog\$this.Text
+#, csharp-format
+msgctxt "Features\\OutOfOffice\\OutOfOfficeDialog\\$this.Text"
+msgid "Out of Office Assistant for {0}"
+msgstr "Out of Office Assistant for {0}"
+
+#: Properties\Resources\OOFGet_Failed
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFGet_Failed"
+msgid "Unable to retrieve Out of Office settings. You can still enable or disable Out of Office, but applying the settings might fail."
+msgstr "Unable to retrieve Out of Office settings. You can still enable or disable Out of Office, but applying the settings might fail."
+
+#: Properties\Resources\OOFGet_Label
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFGet_Label"
+msgid "Retrieving current Out of Office settings"
+msgstr "Retrieving current Out of Office settings"
+
+#: Properties\Resources\OOFGet_Title
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFGet_Title"
+msgid "Out of Office Assistant"
+msgstr "Out of Office Assistant"
+
+#: Properties\Resources\OOFSet_DifferentState
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFSet_DifferentState"
+msgid "Out of office has been enabled, but the server could not handle your full request.\n\n"
+msgstr "Out of office has been enabled, but the server could not handle your full request.\n\n"
+
+#: Properties\Resources\OOFSet_Disabled
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFSet_Disabled"
+msgid "Out of Office has been disabled."
+msgstr "Out of Office has been disabled."
+
+#: Properties\Resources\OOFSet_DisableFailed
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFSet_DisableFailed"
+msgid "Unable to disable Out of Office."
+msgstr "Unable to disable Out of Office."
+
+#: Properties\Resources\OOFSet_Enabled
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFSet_Enabled"
+msgid "Out of Office has been enabled until further notice."
+msgstr "Out of Office has been enabled until further notice."
+
+#: Properties\Resources\OOFSet_EnabledTimeBased
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFSet_EnabledTimeBased"
+msgid "Out of Office has been enabled from {0} till {1}."
+msgstr "Out of Office has been enabled from {0} till {1}."
+
+#: Properties\Resources\OOFSet_EnableFailed
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFSet_EnableFailed"
+msgid "Unable to enable Out of Office."
+msgstr "Unable to enable Out of Office."
+
+#: Properties\Resources\OOFSet_Failed
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFSet_Failed"
+msgid "Unable to apply Out of Office settings"
+msgstr "Unable to apply Out of Office settings"
+
+#: Properties\Resources\OOFSet_Label
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFSet_Label"
+msgid "Applying Out of Office settings"
+msgstr "Applying Out of Office settings"
+
+#: Properties\Resources\OOFSet_Title
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFSet_Title"
+msgid "Out of Office Assistant"
+msgstr "Out of Office Assistant"
+
+#: Properties\Resources\Ribbon_Debug_Label
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_Debug_Label"
+msgid "Debug"
+msgstr "Debug"
+
+#: Properties\Resources\Ribbon_Debug_Screentip
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_Debug_Screentip"
+msgid "Debug dialog"
+msgstr "Debug dialog"
+
+#: Properties\Resources\Ribbon_Debug_Supertip
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_Debug_Supertip"
+msgid "Opens the debug dialog, which shows information on the Spacez plugin"
+msgstr "Opens the debug dialog, which shows information on the Spacez plugin"
+
+#: Properties\Resources\Ribbon_GroupMain_Label
+#. The group label for the ribbon
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_GroupMain_Label"
+msgid "Spacez"
+msgstr "Spacez"
+
+#: Properties\Resources\Ribbon_OOF_Label
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_OOF_Label"
+msgid "Out-of-Office"
+msgstr "Out-of-Office"
+
+#: Properties\Resources\Ribbon_OOF_Screentip
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_OOF_Screentip"
+msgid "Change Out-of-Office settings"
+msgstr "Change Out-of-Office settings"
+
+#: Properties\Resources\Ribbon_OOF_Supertip
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_OOF_Supertip"
+msgid "Opens a dialog which allows Out-of-Office settings to be viewed or modified"
+msgstr "Opens a dialog which allows Out-of-Office settings to be viewed or modified"
+
+#: Properties\Resources\Ribbon_OpenSharedFolders_Label
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_OpenSharedFolders_Label"
+msgid "Open shared folders"
+msgstr "Open shared folders"
+
+#: Properties\Resources\Ribbon_OpenSharedFolders_Screentip
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_OpenSharedFolders_Screentip"
+msgid "Open shared folders - Screentip"
+msgstr "Open shared folders - Screentip"
+
+#: Properties\Resources\Ribbon_OpenSharedFolders_Supertip
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_OpenSharedFolders_Supertip"
+msgid "Open shared folders - Supertip"
+msgstr "Open shared folders - Supertip"
+
+#: Properties\Resources\Ribbon_Settings_Label
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_Settings_Label"
+msgid "Settings"
+msgstr "Settings"
+
+#: Properties\Resources\Ribbon_Settings_Screentip
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_Settings_Screentip"
+msgid "Settings dialog"
+msgstr "Settings dialog"
+
+#: Properties\Resources\Ribbon_Settings_Supertip
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_Settings_Supertip"
+msgid "Opens the settings dialog, which allows configuration of the plugin and access to support functions"
+msgstr "Opens the settings dialog, which allows configuration of the plugin and access to support functions"
+
+#: Properties\Resources\OOFStartup_Message
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFStartup_Message"
+msgid "Out of Office is currently enabled on account \'{0}\'. Would you like to change the settings?"
+msgstr "Out of Office is currently enabled on account \'{0}\'. Would you like to change the settings?"
+
+#: Properties\Resources\OOFStartup_Title
+#, csharp-format
+msgctxt "Properties\\Resources\\OOFStartup_Title"
+msgid "Out of Office Assistant"
+msgstr "Out of Office Assistant"
+
+#: Properties\Resources\GABEvent_Body
+#, csharp-format
+msgctxt "Properties\\Resources\\GABEvent_Body"
+msgid "Modifications to the Global Address Book are not allowed. Please contact your administrator if you think changes are required."
+msgstr "Modifications to the Global Address Book are not allowed. Please contact your administrator if you think changes are required."
+
+#: Properties\Resources\GABEvent_Title
+#, csharp-format
+msgctxt "Properties\\Resources\\GABEvent_Title"
+msgid "Global Address Book"
+msgstr "Global Address Book"
+
+#: Properties\Resources\GAB_FolderFormat
+#, csharp-format
+msgctxt "Properties\\Resources\\GAB_FolderFormat"
+msgid "Address Book for {0}"
+msgstr "Address Book for {0}"
+
+#: Properties\Resources\LocalStore_DisplayName
+#, csharp-format
+msgctxt "Properties\\Resources\\LocalStore_DisplayName"
+msgid "Spacez Folders"
+msgstr "Spacez Folders"
+
+#: Properties\Resources\Feature_DebugSupport
+#, csharp-format
+msgctxt "Properties\\Resources\\Feature_DebugSupport"
+msgid "Support"
+msgstr "Support"
+
+#: Properties\Resources\Feature_FreeBusy
+#, csharp-format
+msgctxt "Properties\\Resources\\Feature_FreeBusy"
+msgid "Free/Busy"
+msgstr "Free/Busy"
+
+#: Properties\Resources\Feature_GAB
+#, csharp-format
+msgctxt "Properties\\Resources\\Feature_GAB"
+msgid "Global Address Book"
+msgstr "Global Address Book"
+
+#: Properties\Resources\Feature_Notes
+#, csharp-format
+msgctxt "Properties\\Resources\\Feature_Notes"
+msgid "Notes"
+msgstr "Notes"
+
+#: Properties\Resources\Feature_OutOfOffice
+#, csharp-format
+msgctxt "Properties\\Resources\\Feature_OutOfOffice"
+msgid "Out of office"
+msgstr "Out of office"
+
+#: Properties\Resources\Feature_ReplyFlags
+#, csharp-format
+msgctxt "Properties\\Resources\\Feature_ReplyFlags"
+msgid "Reply flags"
+msgstr "Reply flags"
+
+#: Properties\Resources\ThisAddIn_Title
+#, csharp-format
+msgctxt "Properties\\Resources\\ThisAddIn_Title"
+msgid "Spacez"
+msgstr "Spacez"
+
+#: Properties\Resources\SSLFailed_Body
+#, csharp-format
+msgctxt "Properties\\Resources\\SSLFailed_Body"
+msgid "There is an error with the security certificate for server {0}. Do you want to allow the connection anyway?"
+msgstr "There is an error with the security certificate for server {0}. Do you want to allow the connection anyway?"
+
+#: Properties\Resources\SSLFailed_Title
+#, csharp-format
+msgctxt "Properties\\Resources\\SSLFailed_Title"
+msgid "Certificate error"
+msgstr "Certificate error"
+
+#: Properties\Resources\Ribbon_Title
+#, csharp-format
+msgctxt "Properties\\Resources\\Ribbon_Title"
+msgid "Spacez"
+msgstr "Spacez"
+
+#: UI\ProgressDialog\labelMessage.Text
+#, csharp-format
+msgctxt "UI\\ProgressDialog\\labelMessage.Text"
+msgid "labelMessage: SET FROM CODE, NO NEED TO TRANSLATE"
+msgstr "labelMessage: SET FROM CODE, NO NEED TO TRANSLATE"
+
+#: UI\ProgressDialog\buttonCancel.Text
+#, csharp-format
+msgctxt "UI\\ProgressDialog\\buttonCancel.Text"
+msgid "Cancel"
+msgstr "Cancel"
+
+#: UI\ProgressDialog\$this.Text
+#, csharp-format
+msgctxt "UI\\ProgressDialog\\$this.Text"
+msgid "ProgressDialog: SET FROM CODE, NO NEED TO TRANSLATE"
+msgstr "ProgressDialog: SET FROM CODE, NO NEED TO TRANSLATE"
+
+#: UI\SettingsDialog\buttonApply.Text
+#, csharp-format
+msgctxt "UI\\SettingsDialog\\buttonApply.Text"
+msgid "Apply"
+msgstr "Apply"
+
+#: UI\SettingsDialog\buttonCancel.Text
+#, csharp-format
+msgctxt "UI\\SettingsDialog\\buttonCancel.Text"
+msgid "Cancel"
+msgstr "Cancel"
+
+#: UI\SettingsDialog\buttonOK.Text
+#, csharp-format
+msgctxt "UI\\SettingsDialog\\buttonOK.Text"
+msgid "OK"
+msgstr "OK"
+
+#: UI\SettingsDialog\$this.Text
+#, csharp-format
+msgctxt "UI\\SettingsDialog\\$this.Text"
+msgid "Spacez Settings"
+msgstr "Spacez Settings"
+
