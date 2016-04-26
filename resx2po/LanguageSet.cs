@@ -10,7 +10,7 @@ namespace etosis.resx2po
     /// Combined multiple resources files that represent the same strings
     /// in multiple languages.
     /// </summary>
-    public class ResourceSet
+    public class LanguageSet
     {
     }
 }

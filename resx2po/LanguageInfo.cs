@@ -11,7 +11,7 @@ namespace etosis.resx2po
         public readonly string Major;
         public readonly string Minor;
 
-        public LanguageInfo(string major, string minor)
+        public LanguageInfo(string major, string minor = null)
         {
             this.Major = major;
             this.Minor = minor;

@@ -123,21 +123,28 @@ namespace etosis.resx2po
 
         private static List<ResxFile> LoadResxFiles(string resxPath, LanguageInfo defaultLanguage)
         {
-            string[] resxPaths = Directory.GetFiles(resxPath, "*.resx", SearchOption.AllDirectories);
-            List<ResxFile> files = new List<ResxFile>();
-            foreach (string path in resxPaths)
+            if (File.Exists(resxPath))
             {
-                string key = MakeResxKey(path, resxPath);
-                string ext = Path.GetExtension(key);
-
-                // Make sure it's not a translation
-                if (ext.StartsWith(".") && LanguageInfo.TryParse(ext.Substring(1)) != null)
-                    continue;
-                    
-                ResxFile resx = ResxFile.Parse(path, key, defaultLanguage);
-                files.Add(resx);
+                SolutionParser parser = new SolutionParser();
             }
-            return files;
+            else
+            {
+                string[] resxPaths = Directory.GetFiles(resxPath, "*.resx", SearchOption.AllDirectories);
+                List<ResxFile> files = new List<ResxFile>();
+                foreach (string path in resxPaths)
+                {
+                    string key = MakeResxKey(path, resxPath);
+                    string ext = Path.GetExtension(key);
+
+                    // Make sure it's not a translation
+                    if (ext.StartsWith(".") && LanguageInfo.TryParse(ext.Substring(1)) != null)
+                        continue;
+
+                    ResxFile resx = ResxFile.Parse(path, key, defaultLanguage);
+                    files.Add(resx);
+                }
+                return files;
+            }
         }
 
         private static string MakeResxKey(string path, string inputPath)

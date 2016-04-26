@@ -8,44 +8,20 @@ using System.Xml.Linq;
 
 namespace etosis.resx2po
 {
-    public class ResxFile
+    public class ResxFile : ResourceFile
     {
-        /// <summary>
-        /// Strings indexed by key
-        /// </summary>
-        private readonly Dictionary<string, StringInfo> _strings = new Dictionary<string, StringInfo>();
-
         private readonly string _key;
-        public readonly LanguageInfo Language;
 
         public ResxFile(string key, LanguageInfo language)
+        :
+        base(language)
         {
             this._key = key;
-            this.Language = language;
-        }
-
-        public void AddString(StringInfo info)
-        {
-            _strings.Add(info.Name, info);
-        }
-
-        public IEnumerable<StringInfo> Strings
-        {
-            get { return _strings.Values; }
         }
 
         public string Key
         {
             get { return _key; }
-        }
-
-        public override string ToString()
-        {
-            string s = Key;
-            if (Language != null)
-                s += ":" + Language;
-            s += "(" + _strings.Count + ")";
-            return s;
         }
 
         public void Write(string path)
