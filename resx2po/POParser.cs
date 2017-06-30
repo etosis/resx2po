@@ -26,7 +26,7 @@ namespace etosis.resx2po
             private string value = "";
             private string comment = "";
 
-            public void Add(string line)
+            public void Add(string line, int lineNumber)
             {
                 lines += line;
                 lines += "\n";
@@ -38,13 +38,13 @@ namespace etosis.resx2po
                         switch (state)
                         {
                             case State.Context:
-                                context += line.FromLiteral();
+                                context += line.FromLiteral(lineNumber, 1);
                                 break;
                             case State.Id:
-                                id += line.FromLiteral();
+                                id += line.FromLiteral(lineNumber, 1);
                                 break;
                             case State.Value:
-                                value += line.FromLiteral();
+                                value += line.FromLiteral(lineNumber, 1);
                                 break;
                         }
                         return;
@@ -56,24 +56,56 @@ namespace etosis.resx2po
                 {
                     if (line.StartsWith("#. "))
                         comment += line.Substring(3);
-                    if (line.StartsWith("#."))
+                    else if (line.StartsWith("#."))
                         comment += line.Substring(2);
                 }
-                else if (line.StartsWith("msgctxt"))
+                else if (
+                    HandleLine(line, lineNumber, "msgctxt", State.Context)
+                        ||
+                    HandleLine(line, lineNumber, "msgid", State.Id)
+                        ||
+                    HandleLine(line, lineNumber, "msgstr", State.Value)
+                )
                 {
-                    context = line.Substring(7).Trim().FromLiteral();
-                    state = State.Context;
+                    // Already handled in condition   
                 }
-                else if (line.StartsWith("msgid"))
+            }
+
+            private bool HandleLine(string line, int lineNumber, string prefix, State newState)
+            {
+                if (!line.StartsWith(prefix))
+                    return false;
+
+                // Subtract the prefix
+                int column = 1 + prefix.Length;
+                line = line.Substring(prefix.Length);
+
+                // And starting space to update the column
+                string ltrim = line.TrimStart();
+                column += line.Length - ltrim.Length;
+
+                // Trailing space
+                line = ltrim.TrimEnd();
+
+                // Parse
+                line = line.FromLiteral(lineNumber, column);
+
+                // Update state
+                switch(newState)
                 {
-                    id = line.Substring(5).Trim().FromLiteral();
-                    state = State.Id;
+                    case State.Context:
+                        context = line;
+                        break;
+                    case State.Id:
+                        id = line;
+                        break;
+                    case State.Value:
+                        value = line;
+                        break;
                 }
-                else if (line.StartsWith("msgstr"))
-                {
-                    value = line.Substring(6).Trim().FromLiteral();
-                    state = State.Value;
-                }
+                state = newState;
+
+                return true;
             }
 
             public Section Process(POParser parser)
@@ -81,11 +113,9 @@ namespace etosis.resx2po
                 if (lines.Length == 0)
                     return this;
 
-                if (!string.IsNullOrEmpty(value) && !string.IsNullOrEmpty(context))
-                {
-                    StringInfo info = new StringInfo(context, value, comment);
-                    parser.POFile.AddString(info);
-                }
+                StringInfo info = new StringInfo(context, id, value, comment);
+                parser.POFile.AddString(info);
+
                 state = State.Global;
                 return new Section();
             }
@@ -109,9 +139,11 @@ namespace etosis.resx2po
             POFile = new POFile(language);
             using (StreamReader reader = File.OpenText(path))
             {
+                int lineNumber = 0;
                 for (;;)
                 {
                     string line = reader.ReadLine();
+                    ++lineNumber;
                     if (line == null)
                         break;
 
@@ -128,16 +160,21 @@ namespace etosis.resx2po
                         if (state != ParseState.Comment)
                             currentSection = currentSection.Process(this);
                         state = ParseState.Comment;
-                        currentSection.Add(line);
+                        currentSection.Add(line, lineNumber);
                     }
                     else
                     {
                         if (state == ParseState.NoEntry)
                             currentSection = currentSection.Process(this);
                         state = ParseState.Values;
-                        currentSection.Add(line);
+                        currentSection.Add(line, lineNumber);
                     }
                 }
+            }
+
+            if (state != ParseState.NoEntry)
+            {
+                currentSection.Process(this);
             }
         }
     }

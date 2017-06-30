@@ -11,14 +11,14 @@ namespace etosis.resx2po
     {
         private static readonly char[] CHARS =
         {
-            '\'', '\"', '\\', '\0', '\a', '\b', '\f', '\n', '\r', '\t', '\v'
+            '\"', '\\', '\0', '\a', '\b', '\f', '\n', '\r', '\t', '\v'
         };
         private static readonly char[] ESCAPES =
         {
-            '\'', '\"', '\\', '0', 'a', 'b', 'f', 'n', 'r', 't', 'v'
+            '\"', '\\', '0', 'a', 'b', 'f', 'n', 'r', 't', 'v'
         };
 
-        public static string FromLiteral(this string input)
+        public static string FromLiteral(this string input, int lineNumber, int column)
         {
             if (input.Length < 2 || !input.StartsWith("\"") || !input.EndsWith("\""))
                 throw new ArgumentException("Invalid literal");
@@ -35,7 +35,7 @@ namespace etosis.resx2po
                         ++i;
                         ushort val;
                         if (i + 4 >= inputChars.Length - 1 || ushort.TryParse(input.Substring(i, 4), out val))
-                            throw new ArgumentException("Invalid literal");
+                            throw new ArgumentException("Invalid literal: " + input.Substring(i, 4) + " at " + GetLocation(input, lineNumber, column, i));
                         literal.Append((char)val);
                     }
                     else
@@ -46,7 +46,7 @@ namespace etosis.resx2po
                             literal.Append(CHARS[index]);
                             ++i;
                         }
-                        else throw new ArgumentException("Invalid literal");
+                        else throw new ArgumentException("Invalid literal: " + input.Substring(i, 2) + " at " + GetLocation(input, lineNumber, column, i));
                     }
                 }
                 else literal.Append(c);
@@ -54,16 +54,52 @@ namespace etosis.resx2po
             return literal.ToString();
         }
 
+        private static string GetLocation(string input, int lineNumber, int column, int index)
+        {
+            char[] inputChars = input.ToCharArray();
+            for (int i = 0; i < index; ++i)
+            {
+                if (inputChars[i] == '\n')
+                {
+                    ++lineNumber;
+                    column = 1;
+                }
+                else if (inputChars[i] == '\r')
+                {
+                    // Ignore
+                }
+                else ++column;
+            }
+
+            return string.Format("line {0}, column {1}", lineNumber, column);
+        }
+
         public static string ToLiteral(this string input)
         {
             StringBuilder literal = new StringBuilder(input.Length + 2);
+
+            if (input.Contains('\n'))
+            {
+                literal.Append("\"\"\n");
+            }
+
             literal.Append("\"");
+            bool needLineBreak = false;
             foreach (char c in input)
             {
+                if (needLineBreak)
+                {
+                    literal.Append("\"\n\"");
+                    needLineBreak = false;
+                }
                 int index = Array.IndexOf(CHARS, c);
                 if (index >= 0)
                 {
                     literal.Append('\\').Append(ESCAPES[index]);
+                    if (c == '\n')
+                    {
+                        needLineBreak = true;
+                    }
                 }
                 else if (Char.GetUnicodeCategory(c) != UnicodeCategory.Control)
                 {

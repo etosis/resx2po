@@ -38,11 +38,26 @@ namespace etosis.resx2po
             }
         }
 
-        public static ResxFile Parse(string path, string key, LanguageInfo language)
+        public static bool IsSourceFile(FileInfo file)
+        {
+            // Check that it has the correct extension
+            string ext = Path.GetExtension(file.FullName);
+            if (ext != ".resx")
+                return false;
+
+            // Make sure it's not a translation
+            string remainingExt = Path.GetExtension(Path.ChangeExtension(file.FullName, null));
+            if (remainingExt.StartsWith(".") && LanguageInfo.TryParse(remainingExt.Substring(1)) != null)
+                return false;
+
+            return true;
+        }
+
+        public static ResxFile Parse(FileInfo path, string key, LanguageInfo language)
         {
             ResxFile resx = new ResxFile(key, language);
 
-            var doc = XDocument.Load(path);
+            var doc = XDocument.Load(path.FullName);
             var root = doc.Root;
             if (root == null)
                 return null;
@@ -50,7 +65,8 @@ namespace etosis.resx2po
             var ns = XNamespace.Get(string.Empty);
             var items = root
                 .Elements(ns + "data")
-                .Where(x => x.Attribute("type") == null)
+                // Exclude non-string types
+                .Where(x => x.Attribute("type") == null && x.Attribute("mimetype") == null)
                 .ToList();
 
             foreach (var item in items)
@@ -65,7 +81,7 @@ namespace etosis.resx2po
                 if (name.StartsWith(">>"))
                     continue;
 
-                StringInfo info = new StringInfo(name, value, comment);
+                StringInfo info = new StringInfo(name, value, value, comment);
                 resx.AddString(info);
             }
 

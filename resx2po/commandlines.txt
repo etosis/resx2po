@@ -1,0 +1,5 @@
+-t KOE -u "C:\Users\Patrick\Development\Kopano\kopano_ol_extension\src\AcaciaZPushPlugin\AcaciaZPushPlugin.sln" "C:\Users\Patrick\Development\Kopano\kopano_ol_extension_translations\translations"
+
+-i "C:\Users\Patrick\Development\Kopano\kopano_ol_extension\src\AcaciaZPushPlugin\AcaciaZPushPlugin.sln" "C:\Users\Patrick\Development\Kopano\kopano_ol_extension_translations\translations"
+
+-u "C:\Users\Patrick\Development\Kopano\kopano_ol_extension_translations\translations\KOE.pot" "C:\Users\Patrick\Development\Kopano\kopano_ol_extension_translations\translations"
