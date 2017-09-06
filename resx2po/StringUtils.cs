@@ -46,6 +46,12 @@ namespace etosis.resx2po
                             literal.Append(CHARS[index]);
                             ++i;
                         }
+                        else if (inputChars[i + 1] == '\'')
+                        {
+                            // Special handling for escaped quotes produced by some tools
+                            literal.Append('\'');
+                            ++i;
+                        }
                         else throw new ArgumentException("Invalid literal: " + input.Substring(i, 2) + " at " + GetLocation(input, lineNumber, column, i));
                     }
                 }
