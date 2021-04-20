@@ -114,7 +114,14 @@ namespace etosis.resx2po
                     return this;
 
                 StringInfo info = new StringInfo(context, id, value, comment);
-                parser.POFile.AddString(info);
+                if (parser.POFile.HasString(info))
+                {
+                    throw new Exception("Duplicate string " + info.Name);
+                }
+                else
+                {
+                    parser.POFile.AddString(info);
+                }
 
                 state = State.Global;
                 return new Section();
